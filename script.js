@@ -15,8 +15,15 @@ $(document).ready(function () {
 
   function open() {
     envelope.addClass("open").removeClass("close");
+
+    // Show the side letter after the fly-out animation finishes
+    setTimeout(() => {
+      document.body.classList.add("show-side-letter");
+    }, 900);
   }
+
   function close() {
     envelope.addClass("close").removeClass("open");
+    document.body.classList.remove("show-side-letter");
   }
 });
